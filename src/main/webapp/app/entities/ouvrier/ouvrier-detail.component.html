@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ouvrier">
+            <h2><span>Ouvrier</span> {{ ouvrier.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{ ouvrier.nom }}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{ ouvrier.prenom }}</span>
+                </dd>
+                <dt><span>Adresse</span></dt>
+                <dd>
+                    <span>{{ ouvrier.adresse }}</span>
+                </dd>
+                <dt><span>Salaire</span></dt>
+                <dd>
+                    <span>{{ ouvrier.salaire }}</span>
+                </dd>
+                <dt><span>Magasin</span></dt>
+                <dd>
+                    <div *ngIf="ouvrier.magasin">
+                        <a [routerLink]="['/magasin', ouvrier.magasin?.id, 'view']">{{ ouvrier.magasin?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ouvrier', ouvrier.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.gestionmagasin.app"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "monolith",
+    "baseName": "gestionmagasin",
+    "packageName": "com.gestionmagasin.app",
+    "packageFolder": "com/gestionmagasin/app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "N2FkYzhkNTgxY2I3MWNiNmU1MGVkZGJhNzlmZTk2MTViMjMzZDNlZDVlNDU4NjE2MDM0NGUzNGQ2ZWE2OTlkNDAyZjMyYmZlMmU0YmNhMmY0NDY2Yzc1NGUwN2Q3MGU2Zjg4NzQ3Nzc3ZTU3MjI3ZGVkN2U5OTFjNzNhMDg3NGI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1608919188498,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": [],
+    "lastLiquibaseTimestamp": 1608923343000
+  }
+}

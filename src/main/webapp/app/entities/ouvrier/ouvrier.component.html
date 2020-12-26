@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span>Ouvriers</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ouvrier" [routerLink]="['/ouvrier/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Ouvrier
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="ouvriers?.length === 0">
+        <span>No ouvriers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="ouvriers && ouvriers.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Nom</span></th>
+                    <th scope="col" ><span>Prenom</span></th>
+                    <th scope="col" ><span>Adresse</span></th>
+                    <th scope="col" ><span>Salaire</span></th>
+                    <th scope="col" ><span>Magasin</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ouvrier of ouvriers ;trackBy: trackId">
+                    <td><a [routerLink]="['/ouvrier', ouvrier.id, 'view']">{{ ouvrier.id }}</a></td>
+                    <td>{{ ouvrier.nom }}</td>
+                    <td>{{ ouvrier.prenom }}</td>
+                    <td>{{ ouvrier.adresse }}</td>
+                    <td>{{ ouvrier.salaire }}</td>
+                    <td>
+                        <div *ngIf="ouvrier.magasin">
+                            <a [routerLink]="['/magasin', ouvrier.magasin?.id, 'view']" >{{ ouvrier.magasin?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/ouvrier', ouvrier.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/ouvrier', ouvrier.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(ouvrier)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

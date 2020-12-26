@@ -1,0 +1,43 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "produit",
+      "otherEntityName": "produit",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "magasin"
+    },
+    {
+      "relationshipName": "ouvrier",
+      "otherEntityName": "ouvrier",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "magasin"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20201225183311",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "magasin",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no"
+}
